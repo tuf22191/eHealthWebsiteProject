@@ -1,4 +1,4 @@
-"""
+﻿"""
 Django settings for eHealth project.
 
 For more information on this file, see
@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'search',
+    'generalSite'
 )
 
 MIDDLEWARE_CLASSES = (
