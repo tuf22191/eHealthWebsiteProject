@@ -1,0 +1,21 @@
+.nav-tabs {
+    margin: 20px;
+    }
+
+.bot {
+    position : absolute;
+    bottom : 0;
+    height : 40px;
+    margin-top : 40px;
+    }
+
+ul.nav li {
+    float: right;
+    margin-top: 20px;
+    }
+
+#header {
+    color: #577492;
+    float: left;
+    }
+
