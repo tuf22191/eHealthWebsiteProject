@@ -1,6 +1,12 @@
 ﻿from django.db import models
+from django.forms import ModelForm
+from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 from django.utils import timezone
-from datetime import date
+
+
+
+
 # Create your models here.
 
 #possibly use this class with one to one correlation with an authorization user class
@@ -10,6 +16,9 @@ class Searcher(models.Model):
         ('Male', 'Male'),
         ('Female', 'Female'),
         )
+
+    searcher = models.OneToOneField(User)
+
     username= models.CharField(max_length=40, unique=True)
     password= models.CharField(max_length=32);
     email= models.EmailField()
@@ -26,14 +35,27 @@ class Searcher(models.Model):
 class Category_List(models.Model):
     name=models.CharField(max_length=200)
     user=models.ForeignKey(Searcher)
+
+
     def __unicode__(self):
         return self.name
+
+
+
 
 class Category(models.Model):
     user=models.ForeignKey(Searcher)
     category_list=models.ForeignKey(Category_List)
     is_public=models.BooleanField(default=False)
     name=models.CharField(max_length=1000)
+
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+
+        self.slug = slugify(self.name)
+        super(Category, self).save(*args, **kwargs)
+
     def __unicode__(self):
         return self.name
 
@@ -44,10 +66,12 @@ class Page(models.Model):
     title=models.CharField(max_length=200)
     category=models.ForeignKey(Category)
     visits=models.PositiveIntegerField(default=0)
+
     summary=models.CharField(max_length=1000)
     flesch_score=models.PositiveIntegerField()
     polarity_score=models.PositiveIntegerField()
     subjectivity_score=models.PositiveIntegerField()
+
     def __unicode__(self):
         return self.title
 

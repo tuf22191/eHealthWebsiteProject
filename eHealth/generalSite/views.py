@@ -1,8 +1,41 @@
 ﻿from django.shortcuts import render
+from generalSite.models import Category, Page
+
+
 
 # Create your views here.
 def index(request):
-    context_dictionary ={}
-    #context_dictionary['value']= something
 
-    return render(request, 'generalSite/index.html',context_dictionary)
+    context_dict={}
+
+    response = render(request,'generalSite/index.html', context_dict)
+
+    return response
+
+
+
+
+def category(request, slug_name):
+    context_dict = {}
+
+    try:
+        category = Category.obects.get(slug = slug_name)
+        context_dict['category_name'] = category.name
+
+        context_dict['category'] = category
+
+        context_dict['slug'] = slug_name
+
+    except Category.DoesNotExists:
+        pass
+
+    return render(request, 'generalSite/category.html', context_dict)
+
+
+
+
+
+
+
+
+

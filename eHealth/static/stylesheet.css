@@ -1,21 +1,24 @@
-.nav-tabs {
-    margin: 20px;
+.tabs {
+    margin-top: 10px;
+    float:right;
     }
 
-.bot {
-    position : absolute;
-    bottom : 0;
-    height : 40px;
-    margin-top : 40px;
+.main {
+    margin-top: 100px;
+    margin-left: 50px;
     }
 
-ul.nav li {
-    float: right;
-    margin-top: 20px;
+.sidebar {
+  float:right;
+  margin-right: 35px;
+  margin-top: 45px;
+}
+
+.checkbox {
+    padding-left: 20px;
     }
 
-#header {
-    color: #577492;
-    float: left;
+.navbar-brand {
+    font-size: 300%;
+    padding-left: 30px;
     }
-
