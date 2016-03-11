@@ -36,23 +36,32 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'registration_register' %}">Register Here</a></li>
-                <li><a href="#">QuerySearch
-                <li><a href="#">My Profile</li>
+                <li><a href="#">QuerySearch</a></li>
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">About Us</a></li>
             </ul>
         </div>
       </div>
     </div>
 
 
-    <div class="main">
+    <div class="col-sm-4 col-md-4 main">
         {% block body_block %}{% endblock %}
     </div>
 
 
-        <div class="col-sm-4 col-md-3 sidebar">
-                {% block side_block %} SIDE BAR CONTENT{% endblock %}
+    <div class="col-sm-4 col-md-3 rightbar">
+        {% block side_block %} SIDE BAR CONTENT {% endblock %}
+    </div>
 
-        </div>
+
+    <footer class="col-sm-9 col-md-6 col-lg-12">
+          <p>Posted by: Hege Refsnes</p>
+          <p>Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
+    </footer>
+
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -61,4 +70,9 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
+
+
+
+
+
 </html>
