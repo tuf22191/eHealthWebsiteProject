@@ -3,17 +3,15 @@
     float:right;
     }
 
-.main {
 
-    margin-top: 100px;
-    margin-left: 50px;
+
+.login{
+    width: 200px;
+    float: right;
+    margin-right: 40px;
     }
 
-.rightbar {
-    float:right;
-    margin-right: 40px;
-    margin-top: 150px;
-}
+
 
 .checkbox {
     padding-left: 20px;
@@ -25,26 +23,16 @@
     }
 
 
-.search {
-    margin-top: 200px;
-    }
 
 
-.search input {
-        position: absolute;
-        width: 300px;
-        float: Left;
-        margin-left: 70px;
-        height: 30px;
-        line-height: 18px;
-        padding: 0 2px 0 2px;
-        border-radius:1px;
+.searching{
+    margin-top: 100px;
     }
 
 footer {
     margin-top: 220px;
     position:relative;
-    border-top: 1px solid;;
+    border-top: 1px solid;
     }
 
 
