@@ -8,6 +8,9 @@ def index(request):
 
     context_dict={}
 
+    context_dict['pages'] = ["www.mimis.com", "www.poyias.com"]
+
+
     response = render(request,'generalSite/index.html', context_dict)
 
     return response
@@ -17,6 +20,7 @@ def index(request):
 
 def category(request, slug_name):
     context_dict = {}
+
 
     try:
         category = Category.obects.get(slug = slug_name)

@@ -2,22 +2,53 @@
 
 {% block body_block %}
 
-            <div class="searching">
-    		    <h2>Custom search field</h2>
-                    <div class="input-group col-md-6">
-                        <input type="text" class="form-control input-lg" placeholder="Buscar" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="button">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </span>
-                    </div>
+            <div class="searching col-md-8">
+
+
+                <div class="input-group col-md-6">
+                            <input type="text" class="form-control input-lg" placeholder="Buscar" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-info btn-lg" type="button">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
                 </div>
 
 
+                <div id="popular">
+                    {% if pages %}
+                        <h3>Most Popular Articles</h3>
+                        <ul class="list-group">
+                            {% for page in pages %}
+                             <li>{{ page }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <strong>There are no categories present.</strong>
+                    {% endif %}
+                </div>
+
+                <div id="shared">
+                    {% if pages %}
+                        <h3>Shared Articles</h3>
+                        <ul class="list-group">
+                            {% for page in pages %}
+                             <li>{{ page }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <strong>There are no categories present.</strong>
+                    {% endif %}
+                </div>
 
 
-        <div class="login">
+            </div>
+
+
+
+
+
+        <div class="login col-md-4">
                 <form class="form-signin">
                     {% csrf_token %}
                     <br />
@@ -32,5 +63,7 @@
                     {% endif %}
                 </form>
         </div>
+
+
 
 {% endblock %}
